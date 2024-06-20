@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+/* .headbar { 
+  grid-area: headbar;
+  background-color: rgba(0, 0, 0, 0);
+  height: 10vh;
+  color:white;
+} */
+ul {
+  height: 10vh;
+  position: fixed;
+  right:5vw;
+  top:0;
+  margin:0;
+  padding: 0;
+  /* line-height:80px; */
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+}
+li {
+  display:inline;
+  margin-right:4vw;    
+}
+li a {
+  color:white;
+  text-decoration: none;
+}
+li a:hover {
+  text-decoration: underline;
+}
+.advertisement { 
+  /* position: relative; */
+  grid-area: ad;
+  height: 90vh;
+  background-image: url('../img/AD_background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.adMask { 
+  /* position: absolute; */
+  /* text-align: center; */
+  background: rgba(0, 0, 0, 0.7); /* 黑色半透明遮罩 */
+  color:white;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.adMask button {
+  border-radius: 8px;
+  background:none;
+  color: white;
+  border: 2px solid rgb(255, 255, 255);
+  font-size: 30px;
+  width: 200px;
+  padding: 20px;
+  margin-top: 50px;
+} 
+.adMask button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.adMask button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.adMask button:hover span {
+  padding-right: 25px;
+}
+
+.adMask button:hover span:after {
+  opacity: 1;
+  right: 0;
+} 
+.adMask > p {
+  font-size: 35px;
+  margin:15px;
+}
+.aside { 
+  grid-area: menu;
+  background-color: rgba(245, 230, 98, 0.8);
+  height:80vh;
+}
+.main { 
+  grid-area: main;
+  background-color: rgba(194, 245, 118, 0.8);
+  height:80vh;
+  font-size: 30px;
+}
+.footer { 
+  grid-area: footer;
+  background-color: rgba(226, 225, 225, 0.8);
+  height:20vh;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'ad ad ad ad ad ad'
+    'menu main main main main main'
+    'footer footer footer footer footer footer';
+  /* gap: 10px; */
+  /* background-color: #2196F3; */
+}
+
+.grid-container > div, 
+.grid-container > div > div {
+  display: flex;
+  align-items: center; /*上下置中*/
+  justify-content: center; /*左右置中*/
+  /* font-size: 30px; */
+}
